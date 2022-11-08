@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:oktoast/oktoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:smart_diary/comm/font.dart';
+
+import 'const.dart';
 
 const String fontFamilyKey = 'fontFamily';
 const String bgColorKey = 'bgColor';
