@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 
 import '../db/entity/event.dart';
-import '../widget/load_asset_widget.dart';
+import 'load_asset_widget.dart';
 import 'asset_entity_cache.dart';
 
 BoxFit getBoxFit(int? width, int? height) {
