@@ -22,3 +22,9 @@ const availableColors = [
 ];
 
 EventBus eventBus = EventBus();
+
+
+const String defaultFontFamily = '';
+const String alimamaFontFamily = 'alimama';
+const String TsangerYuYangTFontFamily = 'TsangerYuYangT';
+const String zcool = 'zcool';
