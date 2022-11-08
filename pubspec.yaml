@@ -1,0 +1,140 @@
+name: smart_diary
+description: 优雅备忘录日记软件
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.1 <3.0.0"
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+  flutter_constraintlayout: ^1.6.3-stable
+  flutter_datetime_picker: ^1.5.1
+  date_format: ^2.0.7
+  group_list_view: ^1.1.1
+  calendar_appbar: ^0.0.6
+  oktoast: ^3.3.1
+  sqflite: 2.0.3+1
+  provider: ^6.0.3
+  scroll_app_bar: ^2.0.0
+  roundcheckbox: ^2.0.4+1
+  shared_preferences: ^2.0.15
+  flutter_easyloading: ^3.0.3
+  video_thumbnail: ^0.5.3
+  flutter_image_compress: ^1.1.3
+  path_provider: ^2.0.2
+  flutter_colorpicker: 1.0.3
+  event_bus: 2.0.0
+  image: ^3.2.2
+  buttons_tabbar: ^1.3.6
+
+  # 图片视频选择
+  image_picker: ^0.8.5+3
+  # 录音/播放音频
+  flutter_sound: ^9.2.13
+  # 手机权限 https://pub.flutter-io.cn/packages/permission_handler
+  permission_handler: ^9.2.0
+  # 图片视频选择器(微信UI) https://pub.flutter-io.cn/packages/wechat_assets_picker
+  wechat_assets_picker: ^8.0.2
+  # 拍照与录像(微信UI) https://pub.flutter-io.cn/packages/wechat_camera_picker
+  wechat_camera_picker: ^3.5.0+1
+  # 图片浏览
+  image_preview: ^1.0.1
+  # 数据库查看
+  sqlite_viewer: ^1.0.5
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^2.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/font/
+    - assets/image/
+
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add widget fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: alimama
+      fonts:
+        - asset: assets/font/Alimama_ShuHeiTi_Bold.ttf
+          style: normal
+
+    - family: TsangerYuYangT
+      fonts:
+        - asset: assets/font/TsangerYuYangT_W03_W03.ttf
+          style: normal
+
+    - family: zcool
+      fonts:
+        - asset: assets/font/zcool_gdh_Regular.ttf
+          style: normal
