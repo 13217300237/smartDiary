@@ -7,19 +7,19 @@ void showDeleteDialog(BuildContext context, int id, Function(int id)? onDeleteCa
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('提示', style: TextStyle(fontSize: 20, color: Theme.of(context).textSelectionColor.withRed(100).withBlue(200))),
+          title: Text('提示', style: TextStyle(fontSize: 20, color: Theme.of(context).textTheme.displayLarge!.color!.withRed(100).withBlue(200))),
           titlePadding: const EdgeInsets.all(15),
           titleTextStyle: const TextStyle(color: Colors.black87, fontSize: 25),
           backgroundColor: Theme.of(context).primaryColor,
           content: Text(
             "您确定要删除吗?",
-            style: TextStyle(fontSize: 16, color: Theme.of(context).textSelectionColor),
+            style: TextStyle(fontSize: 16, color: Theme.of(context).textTheme.displayLarge!.color),
           ),
           contentPadding: const EdgeInsets.all(15),
           contentTextStyle: const TextStyle(color: Colors.black54, fontSize: 19),
           actions: [
             TextButton(
-              child: Text("再考虑一下", style: TextStyle(fontSize: 18, color: Theme.of(context).textSelectionColor)),
+              child: Text("再考虑一下", style: TextStyle(fontSize: 18, color: Theme.of(context).textTheme.displayLarge!.color)),
               onPressed: () {
                 Navigator.of(context).pop(false);
               },
@@ -37,15 +37,15 @@ void showDeleteDialog(BuildContext context, int id, Function(int id)? onDeleteCa
 }
 
 void showDeleteDialogV2(BuildContext context, String text, Function(String text)? onDeleteCallback) {
-  var span1 = TextSpan(text: '您确定要删除标签', style: TextStyle(color: Theme.of(context).textSelectionColor, fontSize: 16));
+  var span1 = TextSpan(text: '您确定要删除标签', style: TextStyle(color: Theme.of(context).textTheme.displayLarge!.color, fontSize: 16));
   var span2 = TextSpan(text: text, style: TextStyle(color: Theme.of(context).buttonColor.withGreen(29), fontSize: 18));
-  var span3 = TextSpan(text: '吗?', style: TextStyle(color: Theme.of(context).textSelectionColor, fontSize: 16));
+  var span3 = TextSpan(text: '吗?', style: TextStyle(color: Theme.of(context).textTheme.displayLarge!.color, fontSize: 16));
 
   showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('提示', style: TextStyle(fontSize: 20, color: Theme.of(context).textSelectionColor)),
+          title: Text('提示', style: TextStyle(fontSize: 20, color: Theme.of(context).textTheme.displayLarge!.color)),
           titlePadding: const EdgeInsets.all(15),
           backgroundColor: Theme.of(context).primaryColor,
           titleTextStyle: const TextStyle(color: Colors.black87, fontSize: 25),
@@ -54,7 +54,7 @@ void showDeleteDialogV2(BuildContext context, String text, Function(String text)
           contentTextStyle: const TextStyle(color: Colors.black54, fontSize: 19),
           actions: [
             TextButton(
-              child: Text("再考虑一下", style: TextStyle(fontSize: 18, color: Theme.of(context).textSelectionColor)),
+              child: Text("再考虑一下", style: TextStyle(fontSize: 18, color: Theme.of(context).textTheme.displayLarge!.color)),
               onPressed: () {
                 Navigator.of(context).pop(false);
               },
@@ -64,7 +64,7 @@ void showDeleteDialogV2(BuildContext context, String text, Function(String text)
                 onDeleteCallback?.call(text);
                 Navigator.of(context).pop(false);
               },
-              child: Text('确定', style: TextStyle(fontSize: 18, color: Theme.of(context).textSelectionColor.withRed(100).withGreen(100))),
+              child: Text('确定', style: TextStyle(fontSize: 18, color: Theme.of(context).textTheme.displayLarge!.color!.withRed(100).withGreen(100))),
             )
           ],
         );

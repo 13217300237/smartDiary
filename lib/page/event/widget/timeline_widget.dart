@@ -60,7 +60,7 @@ class TimelineWidgetState extends State<TimelineWidget> {
               child: Center(
                   child: Text(
             '暂无数据',
-            style: TextStyle(fontSize: 20, color: Theme.of(context).textSelectionColor),
+            style: TextStyle(fontSize: 20, color: Theme.of(context).textTheme.displayLarge!.color),
           )))
         ] else ...[
           myCustomListView()

@@ -34,7 +34,7 @@ Widget eventCard({required EventEntity entity, required BuildContext context, do
                   width: maxWidth,
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                     Text(entity.title ?? '',
-                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: Theme.of(context).textSelectionColor),
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: Theme.of(context).textTheme.displayLarge!.color),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis),
                     const SizedBox(height: 10),
@@ -42,7 +42,7 @@ Widget eventCard({required EventEntity entity, required BuildContext context, do
                       entity.content ?? '',
                       maxLines: 10,
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(color: Theme.of(context).textSelectionColor),
+                      style: TextStyle(color: Theme.of(context).textTheme.displayLarge!.color),
                     ),
                     const SizedBox(height: 20),
                     imgAssetWrap(entity, context),

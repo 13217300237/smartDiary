@@ -69,13 +69,13 @@ class AboutTheOnePageState extends State<AboutTheOnePage> with SingleTickerProvi
                               Center(
                                   child: Text(
                                 '记录关于TA的点点滴滴',
-                                style: TextStyle(fontSize: 22, color: Theme.of(context).textSelectionColor),
+                                style: TextStyle(fontSize: 22, color: Theme.of(context).textTheme.displayLarge!.color),
                               )),
                               const SizedBox(height: 10),
                               Center(
                                   child: Text(
                                 '点这里开始',
-                                style: TextStyle(fontSize: 22, color: Theme.of(context).textSelectionColor),
+                                style: TextStyle(fontSize: 22, color: Theme.of(context).textTheme.displayLarge!.color),
                               )),
                               GestureDetector(
                                 onTap: createData,
@@ -140,7 +140,7 @@ class AboutTheOnePageState extends State<AboutTheOnePage> with SingleTickerProvi
     _taController.text = '';
     return AlertDialog(
         backgroundColor: Theme.of(context).primaryColor,
-        title: Text('TA是', style: TextStyle(fontSize: 28, color: Theme.of(context).textSelectionColor)),
+        title: Text('TA是', style: TextStyle(fontSize: 28, color: Theme.of(context).textTheme.displayLarge!.color)),
         titlePadding: const EdgeInsets.all(20),
         titleTextStyle: const TextStyle(color: Colors.black87, fontSize: 25),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -152,14 +152,14 @@ class AboutTheOnePageState extends State<AboutTheOnePage> with SingleTickerProvi
             controller: _taController,
             cursorColor: Colors.white,
             maxLength: 8,
-            style: TextStyle(fontSize: 24, color: Theme.of(context).textSelectionColor),
+            style: TextStyle(fontSize: 24, color: Theme.of(context).textTheme.displayLarge!.color),
             decoration: const InputDecoration(border: InputBorder.none, counterStyle: TextStyle(color: Colors.white, fontSize: 17)),
           ),
         ),
         contentPadding: const EdgeInsets.all(10),
         actions: [
           TextButton(
-            child: Text("取消", style: TextStyle(fontSize: 18, color: Theme.of(context).textSelectionColor)),
+            child: Text("取消", style: TextStyle(fontSize: 18, color: Theme.of(context).textTheme.displayLarge!.color)),
             onPressed: () {
               Navigator.of(context).pop(null);
             },
@@ -180,7 +180,7 @@ class AboutTheOnePageState extends State<AboutTheOnePage> with SingleTickerProvi
   AlertDialog modifyAboutTheOneDataDialog(TheOne t) {
     _taController.text = t.name ?? '';
     return AlertDialog(
-        title: Text('TA是', style: TextStyle(fontSize: 28, color: Theme.of(context).textSelectionColor)),
+        title: Text('TA是', style: TextStyle(fontSize: 28, color: Theme.of(context).textTheme.displayLarge!.color)),
         backgroundColor: Theme.of(context).primaryColor,
         titlePadding: const EdgeInsets.all(20),
         titleTextStyle: const TextStyle(color: Colors.black87, fontSize: 25),
@@ -193,14 +193,14 @@ class AboutTheOnePageState extends State<AboutTheOnePage> with SingleTickerProvi
             controller: _taController,
             cursorColor: Colors.white,
             maxLength: 8,
-            style: TextStyle(fontSize: 24, color: Theme.of(context).textSelectionColor),
+            style: TextStyle(fontSize: 24, color: Theme.of(context).textTheme.displayLarge!.color),
             decoration: const InputDecoration(border: InputBorder.none, counterStyle: TextStyle(color: Colors.white, fontSize: 17)),
           ),
         ),
         contentPadding: const EdgeInsets.all(10),
         actions: [
           TextButton(
-            child: Text("取消", style: TextStyle(fontSize: 18, color: Theme.of(context).textSelectionColor)),
+            child: Text("取消", style: TextStyle(fontSize: 18, color: Theme.of(context).textTheme.displayLarge!.color)),
             onPressed: () {
               Navigator.of(context).pop(null);
             },
@@ -220,7 +220,7 @@ class AboutTheOnePageState extends State<AboutTheOnePage> with SingleTickerProvi
 
   AlertDialog topicDataDialog(BuildContext context, StateSetter setStater, {bool ifNeedDelete = false, TheOneTopic? topicInstance}) {
     return AlertDialog(
-        title: Text('关键词', style: TextStyle(fontSize: 28, color: Theme.of(context).textSelectionColor)),
+        title: Text('关键词', style: TextStyle(fontSize: 28, color: Theme.of(context).textTheme.displayLarge!.color)),
         titlePadding: const EdgeInsets.all(20),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         backgroundColor: Theme.of(context).primaryColor,
@@ -240,7 +240,7 @@ class AboutTheOnePageState extends State<AboutTheOnePage> with SingleTickerProvi
             ),
           ),
           const SizedBox(height: 20),
-          Text('选择标记颜色', style: TextStyle(color: Theme.of(context).textSelectionColor, fontSize: 20)),
+          Text('选择标记颜色', style: TextStyle(color: Theme.of(context).textTheme.displayLarge!.color, fontSize: 20)),
           const SizedBox(height: 20),
           SizedBox(
               height: 130,
@@ -262,7 +262,7 @@ class AboutTheOnePageState extends State<AboutTheOnePage> with SingleTickerProvi
                 },
                 child: Text('删除')),
           TextButton(
-            child: Text("取消", style: TextStyle(fontSize: 18, color: Theme.of(context).textSelectionColor)),
+            child: Text("取消", style: TextStyle(fontSize: 18, color: Theme.of(context).textTheme.displayLarge!.color)),
             onPressed: () {
               Navigator.of(context).pop(null);
             },
@@ -354,7 +354,7 @@ class AboutTheOnePageState extends State<AboutTheOnePage> with SingleTickerProvi
                               item.name ?? '',
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25, color: Theme.of(context).textSelectionColor),
+                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25, color: Theme.of(context).textTheme.displayLarge!.color),
                             )),
                         const Spacer(),
                         GestureDetector(
@@ -388,11 +388,11 @@ class AboutTheOnePageState extends State<AboutTheOnePage> with SingleTickerProvi
                             bool? res = await showDialog<bool>(
                                 context: context,
                                 builder: (context) {
-                                  var span1 = TextSpan(text: '您确定要删除 ', style: TextStyle(color: Theme.of(context).textSelectionColor, fontSize: 16));
+                                  var span1 = TextSpan(text: '您确定要删除 ', style: TextStyle(color: Theme.of(context).textTheme.displayLarge!.color, fontSize: 16));
                                   var span2 = TextSpan(
                                       text: item.name ?? '',
                                       style: TextStyle(color: Theme.of(context).buttonColor.withBlue(29).withRed(20).withGreen(100), fontSize: 18));
-                                  var span3 = TextSpan(text: ' 吗?', style: TextStyle(color: Theme.of(context).textSelectionColor, fontSize: 16));
+                                  var span3 = TextSpan(text: ' 吗?', style: TextStyle(color: Theme.of(context).textTheme.displayLarge!.color, fontSize: 16));
 
                                   return AlertDialog(
                                     backgroundColor: Theme.of(context).primaryColor,
@@ -400,7 +400,7 @@ class AboutTheOnePageState extends State<AboutTheOnePage> with SingleTickerProvi
                                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                                     actions: [
                                       TextButton(
-                                        child: Text("取消", style: TextStyle(fontSize: 18, color: Theme.of(context).textSelectionColor)),
+                                        child: Text("取消", style: TextStyle(fontSize: 18, color: Theme.of(context).textTheme.displayLarge!.color)),
                                         onPressed: () {
                                           Navigator.of(context).pop(false);
                                         },
@@ -409,7 +409,7 @@ class AboutTheOnePageState extends State<AboutTheOnePage> with SingleTickerProvi
                                         onPressed: () {
                                           Navigator.of(context).pop(true);
                                         },
-                                        child: Text('确定', style: TextStyle(fontSize: 18, color: Theme.of(context).textSelectionColor.withRed(100))),
+                                        child: Text('确定', style: TextStyle(fontSize: 18, color: Theme.of(context).textTheme.displayLarge!.color!.withRed(100))),
                                       )
                                     ],
                                   );
@@ -494,9 +494,9 @@ class AboutTheOnePageState extends State<AboutTheOnePage> with SingleTickerProvi
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text('确定删除这个关键词么?', style: TextStyle(color: Theme.of(context).textSelectionColor.withGreen(100).withRed(50))),
+            title: Text('确定删除这个关键词么?', style: TextStyle(color: Theme.of(context).textTheme.displayLarge!.color!.withGreen(100).withRed(50))),
             backgroundColor: Theme.of(context).primaryColor,
-            content: Text('${theOneTopic.content}', style: TextStyle(fontSize: 22, color: Theme.of(context).textSelectionColor)),
+            content: Text('${theOneTopic.content}', style: TextStyle(fontSize: 22, color: Theme.of(context).textTheme.displayLarge!.color)),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             actions: [
               TextButton(
@@ -509,7 +509,7 @@ class AboutTheOnePageState extends State<AboutTheOnePage> with SingleTickerProvi
                 onPressed: () {
                   Navigator.of(context).pop(true);
                 },
-                child: Text('确定', style: TextStyle(fontSize: 18, color: Theme.of(context).textSelectionColor)),
+                child: Text('确定', style: TextStyle(fontSize: 18, color: Theme.of(context).textTheme.displayLarge!.color)),
               )
             ],
           );
@@ -533,7 +533,7 @@ class AboutTheOnePageState extends State<AboutTheOnePage> with SingleTickerProvi
           elevation: 1.5,
           child: Padding(
             padding: const EdgeInsets.only(left: 10, right: 10, top: 6, bottom: 6),
-            child: Text(theOneTopic.content ?? '', style: TextStyle(fontSize: 20, color: Theme.of(context).textSelectionColor)),
+            child: Text(theOneTopic.content ?? '', style: TextStyle(fontSize: 20, color: Theme.of(context).textTheme.displayLarge!.color)),
           )),
     );
   }

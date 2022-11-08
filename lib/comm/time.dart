@@ -62,8 +62,8 @@ String getWeekDay(int dateInt) {
 
 // 如果当前事件的时间与当前事件差小于5分钟，就显示刚才
 Widget getTimeWidget(EventEntity entity,BuildContext context) {
-  var textStyle = TextStyle(color: Theme.of(context).textSelectionColor, fontSize: 12);
-  var textStyle2 = TextStyle(color: Theme.of(context).textSelectionColor, fontSize: 12);
+  var textStyle = TextStyle(color: Theme.of(context).textTheme.displayLarge!.color, fontSize: 12);
+  var textStyle2 = TextStyle(color: Theme.of(context).textTheme.displayLarge!.color, fontSize: 12);
 
   var eventDateInt = entity.date;
   if (eventDateInt == null) return Text(getDateStrV2(entity.date ?? 0), style: textStyle);

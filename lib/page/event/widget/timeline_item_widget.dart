@@ -111,7 +111,7 @@ class _TimelineItemWidgetState extends State<TimelineItemWidget> {
             width: 36,
             child: Text(
               '${formatDate(DateTime.fromMillisecondsSinceEpoch(widget.entity.date ?? 0), ['yyyy'])}年',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Theme.of(context).textSelectionColor),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Theme.of(context).textTheme.displayLarge!.color),
               textAlign: TextAlign.right,
               maxLines: 1,
               overflow: TextOverflow.clip,
@@ -121,7 +121,7 @@ class _TimelineItemWidgetState extends State<TimelineItemWidget> {
             width: 36,
             child: Text(
               '${formatDate(DateTime.fromMillisecondsSinceEpoch(widget.entity.date ?? 0), ['mm'])}月',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Theme.of(context).textSelectionColor),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Theme.of(context).textTheme.displayLarge!.color),
               textAlign: TextAlign.right,
             ),
           ),
@@ -129,12 +129,12 @@ class _TimelineItemWidgetState extends State<TimelineItemWidget> {
             width: 36,
             child: Text(
               formatDate(DateTime.fromMillisecondsSinceEpoch(widget.entity.date ?? 0), ['dd']),
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: Theme.of(context).textSelectionColor),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: Theme.of(context).textTheme.displayLarge!.color),
               textAlign: TextAlign.right,
             ),
           ),
           const SizedBox(height: 2),
-          Text(widget.entity.day ?? '-', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 10, color: Theme.of(context).textSelectionColor))
+          Text(widget.entity.day ?? '-', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 10, color: Theme.of(context).textTheme.displayLarge!.color))
         ]);
       case 0: // 年月日都相同
         return const SizedBox(width: 36);
@@ -145,7 +145,7 @@ class _TimelineItemWidgetState extends State<TimelineItemWidget> {
             width: 36,
             child: Text(
               '${formatDate(DateTime.fromMillisecondsSinceEpoch(widget.entity.date ?? 0), ['mm'])}月',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Theme.of(context).textSelectionColor),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Theme.of(context).textTheme.displayLarge!.color),
               textAlign: TextAlign.right,
             ),
           ),
@@ -153,12 +153,12 @@ class _TimelineItemWidgetState extends State<TimelineItemWidget> {
             width: 36,
             child: Text(
               formatDate(DateTime.fromMillisecondsSinceEpoch(widget.entity.date ?? 0), ['dd']),
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: Theme.of(context).textSelectionColor),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: Theme.of(context).textTheme.displayLarge!.color),
               textAlign: TextAlign.right,
             ),
           ),
           const SizedBox(height: 2),
-          Text(widget.entity.day ?? '-', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 10, color: Theme.of(context).textSelectionColor))
+          Text(widget.entity.day ?? '-', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 10, color: Theme.of(context).textTheme.displayLarge!.color))
         ]);
       case 3: // 年月相同，日不同
         return Column(children: [
@@ -167,12 +167,12 @@ class _TimelineItemWidgetState extends State<TimelineItemWidget> {
             width: 36,
             child: Text(
               formatDate(DateTime.fromMillisecondsSinceEpoch(widget.entity.date ?? 0), ['dd']),
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: Theme.of(context).textSelectionColor),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: Theme.of(context).textTheme.displayLarge!.color),
               textAlign: TextAlign.right,
             ),
           ),
           const SizedBox(height: 2),
-          Text(widget.entity.day ?? '-', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 10, color: Theme.of(context).textSelectionColor))
+          Text(widget.entity.day ?? '-', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 10, color: Theme.of(context).textTheme.displayLarge!.color))
         ]);
     }
 

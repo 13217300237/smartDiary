@@ -274,11 +274,11 @@ class _EventDetailPageState extends State<EventDetailPage> {
     return TextField(
       readOnly: readOnly,
       controller: _vm.titleController,
-      style: TextStyle(fontSize: 25, color: Theme.of(context).textSelectionColor),
+      style: TextStyle(fontSize: 25, color: Theme.of(context).textTheme.displayLarge!.color),
       cursorColor: Colors.blueGrey,
       decoration: InputDecoration(
           hintText: '请输入标题',
-          hintStyle: TextStyle(color: Theme.of(context).textSelectionColor),
+          hintStyle: TextStyle(color: Theme.of(context).textTheme.displayLarge!.color),
           border: InputBorder.none,
           labelStyle: TextStyle(color: Theme.of(context).buttonColor)),
     );
@@ -291,7 +291,7 @@ class _EventDetailPageState extends State<EventDetailPage> {
     if (widget.entity == null) {
       return Text(
         '现在是 ${formatDate(DateTime.now(), formats, locale: dateLocale)}',
-        style: TextStyle(fontSize: 14, color: Theme.of(context).textSelectionColor),
+        style: TextStyle(fontSize: 14, color: Theme.of(context).textTheme.displayLarge!.color),
       );
     } else {
       return Text(
@@ -314,7 +314,7 @@ class _EventDetailPageState extends State<EventDetailPage> {
     return TextField(
       readOnly: readOnly,
       controller: _vm.contentController,
-      style: TextStyle(fontSize: 18, color: Theme.of(context).textSelectionColor),
+      style: TextStyle(fontSize: 18, color: Theme.of(context).textTheme.displayLarge!.color),
       maxLines: 100,
       minLines: 5,
       cursorColor: Colors.blueGrey,
@@ -322,7 +322,7 @@ class _EventDetailPageState extends State<EventDetailPage> {
         hintText: '请输入内容',
         border: InputBorder.none,
         hintStyle: TextStyle(
-          color: Theme.of(context).textSelectionColor,
+          color: Theme.of(context).textTheme.displayLarge!.color,
           fontSize: 18,
         ),
       ),

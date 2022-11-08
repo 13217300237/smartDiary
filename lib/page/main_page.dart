@@ -71,7 +71,7 @@ class _MainPageState extends State<MainPage> {
           // This trailing comma make
           bottomNavigationBar: BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
-              fixedColor: Theme.of(context).textSelectionColor,
+              fixedColor: Theme.of(context).textTheme.displayLarge!.color,
               backgroundColor: Theme.of(context).primaryColor.withOpacity(.6),
               onTap: (i) {
                 setState(() {
@@ -135,7 +135,7 @@ class _MainPageState extends State<MainPage> {
               child: Text(text,
                   style: TextStyle(
                     fontSize: 25,
-                    color: Theme.of(context).textSelectionColor,
+                    color: Theme.of(context).textTheme.displayLarge!.color,
                     fontWeight: FontWeight.bold,
                     decoration: TextDecoration.underline,
                     decorationStyle: TextDecorationStyle.double,

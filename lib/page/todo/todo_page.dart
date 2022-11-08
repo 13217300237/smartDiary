@@ -93,7 +93,7 @@ class TodoPageState extends State<TodoPage> {
   _tabs() {
     _getTabLineColor(int index) {
       if (_vm.currentIndex == index) {
-        return Theme.of(context).textSelectionColor;
+        return Theme.of(context).textTheme.displayLarge!.color;
       } else {
         return Colors.transparent;
       }
@@ -138,7 +138,7 @@ class TodoPageState extends State<TodoPage> {
                     padding: const EdgeInsets.all(15.0),
                     child: Center(
                         child: Text('从这里开始\n记录第一条代办',
-                            style: TextStyle(fontSize: 22, color: Theme.of(context).textSelectionColor, height: 1.5), textAlign: TextAlign.center)),
+                            style: TextStyle(fontSize: 22, color: Theme.of(context).textTheme.displayLarge!.color, height: 1.5), textAlign: TextAlign.center)),
                   ),
                 ),
                 GestureDetector(
@@ -253,9 +253,9 @@ class TodoPageState extends State<TodoPage> {
 
     Widget timeWidget;
     if (currentItem.modifyTimeStr != currentItem.recordTimeStr) {
-      timeWidget = Text('最近修改 ${currentItem.modifyTimeStr}', style: TextStyle(color: Theme.of(context).textSelectionColor, fontSize: 12));
+      timeWidget = Text('最近修改 ${currentItem.modifyTimeStr}', style: TextStyle(color: Theme.of(context).textTheme.displayLarge!.color, fontSize: 12));
     } else {
-      timeWidget = Text('录入时间 ${currentItem.recordTimeStr}', style: TextStyle(color: Theme.of(context).textSelectionColor, fontSize: 12));
+      timeWidget = Text('录入时间 ${currentItem.recordTimeStr}', style: TextStyle(color: Theme.of(context).textTheme.displayLarge!.color, fontSize: 12));
     }
 
     // 中

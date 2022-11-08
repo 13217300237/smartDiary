@@ -120,7 +120,7 @@ class _SettingPageState extends State<SettingPage> {
             title: Text(text, style: const TextStyle(color: Colors.red)),
             actions: [
               TextButton(
-                child: Text("再考虑一下", style: TextStyle(fontSize: 18, color: Theme.of(context).textSelectionColor)),
+                child: Text("再考虑一下", style: TextStyle(fontSize: 18, color: Theme.of(context).textTheme.displayLarge!.color)),
                 onPressed: () {
                   Navigator.of(context).pop(false);
                 },
@@ -143,9 +143,9 @@ class _SettingPageState extends State<SettingPage> {
           margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
           child: Row(children: [
-            Image(image: AssetImage(asset), width: 30.0, color: Theme.of(context).textSelectionColor),
+            Image(image: AssetImage(asset), width: 30.0, color: Theme.of(context).textTheme.displayLarge!.color),
             const SizedBox(width: 10),
-            Text(text, style: TextStyle(fontSize: 20, color: Theme.of(context).textSelectionColor)),
+            Text(text, style: TextStyle(fontSize: 20, color: Theme.of(context).textTheme.displayLarge!.color)),
           ])),
     );
   }
@@ -155,9 +155,9 @@ class _SettingPageState extends State<SettingPage> {
         margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         child: Row(children: [
-          Image(image: AssetImage(asset), width: 30.0, color: Theme.of(context).textSelectionColor),
+          Image(image: AssetImage(asset), width: 30.0, color: Theme.of(context).textTheme.displayLarge!.color),
           const SizedBox(width: 10),
-          Text(text, style: TextStyle(fontSize: 22, color: Theme.of(context).textSelectionColor)),
+          Text(text, style: TextStyle(fontSize: 22, color: Theme.of(context).textTheme.displayLarge!.color)),
           const Spacer(),
           Switch(
               activeColor: Theme.of(context).buttonColor,
@@ -178,9 +178,9 @@ class _SettingPageState extends State<SettingPage> {
         child: Column(
           children: [
             Row(children: [
-              Image(image: AssetImage(asset), width: 30.0, color: Theme.of(context).textSelectionColor),
+              Image(image: AssetImage(asset), width: 30.0, color: Theme.of(context).textTheme.displayLarge!.color),
               const SizedBox(width: 10),
-              Text(text, style: TextStyle(fontSize: 22, color: Theme.of(context).textSelectionColor)),
+              Text(text, style: TextStyle(fontSize: 22, color: Theme.of(context).textTheme.displayLarge!.color)),
               const Spacer(),
             ]),
             Column(
@@ -189,7 +189,7 @@ class _SettingPageState extends State<SettingPage> {
                 const SizedBox(width: 20),
                 Radio(
                     value: e.fontFamily,
-                    activeColor: Theme.of(context).textSelectionColor,
+                    activeColor: Theme.of(context).textTheme.displayLarge!.color,
                     groupValue: _fontGroupValue,
                     onChanged: (String? v) {
                       setState(() {
@@ -197,7 +197,7 @@ class _SettingPageState extends State<SettingPage> {
                       });
                       Provider.of<AppInfoProvider>(context, listen: false).setFontFamily(_fontGroupValue);
                     }),
-                Text(e.fontName, style: TextStyle(fontSize: 18, color: Theme.of(context).textSelectionColor, fontFamily: e.fontFamily)),
+                Text(e.fontName, style: TextStyle(fontSize: 18, color: Theme.of(context).textTheme.displayLarge!.color, fontFamily: e.fontFamily)),
               ]);
             }).toList()),
           ],
@@ -212,9 +212,9 @@ class _SettingPageState extends State<SettingPage> {
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         child: Column(children: [
           Row(children: [
-            Image(image: AssetImage(asset), width: 30.0, color: Theme.of(context).textSelectionColor),
+            Image(image: AssetImage(asset), width: 30.0, color: Theme.of(context).textTheme.displayLarge!.color),
             const SizedBox(width: 10),
-            Text(text, style: TextStyle(fontSize: 22, color: Theme.of(context).textSelectionColor)),
+            Text(text, style: TextStyle(fontSize: 22, color: Theme.of(context).textTheme.displayLarge!.color)),
             const Spacer(),
           ]),
           Column(
@@ -223,7 +223,7 @@ class _SettingPageState extends State<SettingPage> {
               const SizedBox(width: 20),
               Radio(
                   value: e.color.value,
-                  activeColor: Theme.of(context).textSelectionColor,
+                  activeColor: Theme.of(context).textTheme.displayLarge!.color,
                   groupValue: _colorGroupValue,
                   onChanged: (int? v) {
                     setState(() {

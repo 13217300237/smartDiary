@@ -47,7 +47,7 @@ class FilterWidgetState extends State<FilterWidget> {
                           child: Center(
                               child: Text(
                             '$date\n($count)',
-                            style: TextStyle(color: Theme.of(context).textSelectionColor),
+                            style: TextStyle(color: Theme.of(context).textTheme.displayLarge!.color),
                             textAlign: TextAlign.center,
                           ))));
                 },

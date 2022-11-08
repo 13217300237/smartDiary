@@ -104,7 +104,7 @@ class _LoadingViewState extends State<LoadingView> {
                 child: Image(image: AssetImage(AssetManager.png('empty')), width: 230.0, color: Theme.of(context).buttonColor)),
             Text(
               desc,
-              style: TextStyle(color: Theme.of(context).textSelectionColor, fontSize: 25),
+              style: TextStyle(color: Theme.of(context).textTheme.displayLarge!.color, fontSize: 25),
             )
           ],
         ),

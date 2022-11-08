@@ -141,7 +141,7 @@ class _EventSearchPageState extends State<EventSearchPage> {
                           height: 40,
                           tabs: _vm.groupData.keys.map((e) {
                             String tag = e.isEmpty ? '无标签' : e;
-                            return Tab(child: Text(tag, style: TextStyle(fontSize: 16, color: Theme.of(context).textSelectionColor)));
+                            return Tab(child: Text(tag, style: TextStyle(fontSize: 16, color: Theme.of(context).textTheme.displayLarge!.color)));
                           }).toList()),
                     ),
                   ],

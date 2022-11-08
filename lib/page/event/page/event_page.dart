@@ -47,7 +47,7 @@ class _EventPageState extends State<EventPage> with AutomaticKeepAliveClientMixi
     return formatDate(DateTime.fromMillisecondsSinceEpoch(time), ['yyyy', '年', 'mm', '月', 'dd', '日'], locale: const SimplifiedChineseDateLocale());
   }
 
-  Color get _textColor => Theme.of(context).textSelectionColor;
+  Color get _textColor => Theme.of(context).textTheme.displayLarge!.color!;
 
   @override
   void initState() {
@@ -121,7 +121,7 @@ class _EventPageState extends State<EventPage> with AutomaticKeepAliveClientMixi
                                     width: double.infinity,
                                     child: Center(
                                         child: Text('从这里开始\n记录生活中有意义的事吧',
-                                            style: TextStyle(fontSize: 22, color: Theme.of(context).textSelectionColor, height: 1.5),
+                                            style: TextStyle(fontSize: 22, color: Theme.of(context).textTheme.displayLarge!.color, height: 1.5),
                                             textAlign: TextAlign.center)),
                                   ),
                                   GestureDetector(
@@ -288,7 +288,7 @@ class _EventPageState extends State<EventPage> with AutomaticKeepAliveClientMixi
             theme: DatePickerTheme(
               backgroundColor: Theme.of(context).primaryColor,
               itemHeight: 50,
-              cancelStyle: TextStyle(fontSize: 16, color: Theme.of(context).textSelectionColor),
+              cancelStyle: TextStyle(fontSize: 16, color: Theme.of(context).textTheme.displayLarge!.color),
               doneStyle: TextStyle(fontSize: 16, color: Theme.of(context).buttonColor),
             ),
           );
@@ -340,7 +340,7 @@ class _EventPageState extends State<EventPage> with AutomaticKeepAliveClientMixi
 
   _appBarWidget() {
     return AppBar(
-        title: Column(children: [Text('事件时间轴',style: TextStyle(color: Theme.of(context).textSelectionColor),)/*,_datePicker()*/]),
+        title: Column(children: [Text('事件时间轴',style: TextStyle(color: Theme.of(context).textTheme.displayLarge!.color),)/*,_datePicker()*/]),
         backgroundColor: Theme.of(context).primaryColor,
         shadowColor: Colors.transparent,
         elevation: 1);

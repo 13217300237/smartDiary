@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
                 // 底色
                 primaryColor: v.bgColor,
                 // 字色
-                textSelectionColor: v.textColor,
+                textTheme: TextTheme(displayLarge: TextStyle(color: v.textColor)),
                 // 主色调
                 buttonColor: v.mainColor,
                 // 字体库

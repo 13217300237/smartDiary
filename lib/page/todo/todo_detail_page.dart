@@ -174,7 +174,7 @@ class _TodoDetailPageState extends State<TodoDetailPage> {
     if (widget.entity == null) {
       return Text(
         '现在是 ${formatDate(DateTime.now(), dateFormatYMDHN, locale: dateLocale)}',
-        style: TextStyle(fontSize: 14, color: Theme.of(context).textSelectionColor),
+        style: TextStyle(fontSize: 14, color: Theme.of(context).textTheme.displayLarge!.color),
       );
     } else {
       return Text(
@@ -187,13 +187,13 @@ class _TodoDetailPageState extends State<TodoDetailPage> {
   Widget _contentWidget() {
     return TextField(
       controller: _vm.contentController,
-      style: TextStyle(fontSize: 18, color: Theme.of(context).textSelectionColor),
+      style: TextStyle(fontSize: 18, color: Theme.of(context).textTheme.displayLarge!.color),
       maxLines: 100,
       minLines: 5,
       cursorColor: Theme.of(context).buttonColor,
       decoration: InputDecoration(
         hintText: '请输入代办内容',
-        hintStyle: TextStyle(color: Theme.of(context).textSelectionColor),
+        hintStyle: TextStyle(color: Theme.of(context).textTheme.displayLarge!.color),
         border: InputBorder.none,
         labelStyle: const TextStyle(color: Colors.green, fontSize: 30),
       ),
@@ -237,7 +237,7 @@ class _TodoDetailPageState extends State<TodoDetailPage> {
       theme: DatePickerTheme(
         backgroundColor: Theme.of(context).primaryColor,
         itemHeight: 50,
-        cancelStyle: TextStyle(fontSize: 16, color: Theme.of(context).textSelectionColor),
+        cancelStyle: TextStyle(fontSize: 16, color: Theme.of(context).textTheme.displayLarge!.color),
         doneStyle: TextStyle(fontSize: 16, color: Theme.of(context).buttonColor),
       ),
     );
