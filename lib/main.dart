@@ -9,18 +9,22 @@ import 'comm/const.dart';
 import 'comm/tag_cache.dart';
 import 'db/db_core.dart';
 import 'page/main_page.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 /// 入口函数
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // 为了提高图片item在列表中快速滑动时重新加载的流畅度
-  PaintingBinding.instance.imageCache.maximumSize = 10000; // 2000 entries
-  PaintingBinding.instance.imageCache.maximumSizeBytes = 300 << 20; //
+  initImgCacheParam();
   AppInfoProvider().init();
   await initDb();
   await TagCachePool().initCache();
   runApp(const MyApp());
-  // configLoading();
+}
+
+initImgCacheParam() {
+  // 为了提高图片item在列表中快速滑动时重新加载的流畅度
+  PaintingBinding.instance.imageCache.maximumSize = 10000; // 2000 entries
+  PaintingBinding.instance.imageCache.maximumSizeBytes = 300 << 20; //
 }
 
 Future initDb() async {
@@ -31,7 +35,6 @@ Future initDb() async {
   bool? s = sp.getBool(firstTimeRunningTag) ?? false;
   if (s == false) {
     await sp.setBool(firstTimeRunningTag, true);
-    // await DbCore.initTestData();
   }
 }
 
@@ -45,9 +48,9 @@ class MyApp extends StatelessWidget {
       child: Consumer<AppInfoProvider>(
         builder: (context, v, _) {
           return OKToast(
-              child: MaterialApp(
-            debugShowCheckedModeBanner: false,
+              child: GetMaterialApp(
             home: const MainPage(title: '我的备忘录'),
+            debugShowCheckedModeBanner: false,
             builder: EasyLoading.init(),
             theme: ThemeData(
                 // 底色
