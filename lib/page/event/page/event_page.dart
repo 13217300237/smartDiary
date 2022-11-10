@@ -4,6 +4,7 @@ import 'package:date_format/date_format.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:smart_diary/comm/asset_manager.dart';
 import 'package:smart_diary/page/base/loading_view.dart';
@@ -15,7 +16,7 @@ import '../../../comm/time.dart';
 import '../../../comm/time_select_model.dart';
 import '../vm/event_input_vm.dart';
 import '../vm/event_main_vm.dart';
-import 'event_search_page.dart';
+import 'event_search_page2.dart';
 
 class EventPage extends StatefulWidget {
   const EventPage({Key? key}) : super(key: key);
@@ -224,11 +225,13 @@ class _EventPageState extends State<EventPage> with AutomaticKeepAliveClientMixi
           top: 35,
           right: 15,
           child: FadeTransition(
-              opacity: _fadeAnimation,
-              child: ElevatedButton(
-                  style: getFloatBtnStyle(),
-                  onPressed: gotoSearch,
-                  child: Image.asset(AssetManager.png('search'), color: Colors.white, width: 30))),
+            opacity: _fadeAnimation,
+            child: ElevatedButton(
+              style: getFloatBtnStyle(),
+              onPressed: gotoSearch,
+              child: Image.asset(AssetManager.png('search'), color: Colors.white, width: 30),
+            ),
+          ),
         )
       ],
     );
@@ -239,14 +242,20 @@ class _EventPageState extends State<EventPage> with AutomaticKeepAliveClientMixi
   }
 
   void gotoSearch() {
-    // 跳转到详情页面
-    Navigator.push(context, CupertinoPageRoute(builder: (BuildContext context) {
-      return const EventSearchPage();
-    })).then((value) {
+    Get.to(EventSearchPage2(),transition: Transition.rightToLeft)?.then((value) {
       if (value != null) {
         _vm.requestData();
       }
     });
+
+    // // 跳转到详情页面
+    // Navigator.push(context, CupertinoPageRoute(builder: (BuildContext context) {
+    //   return const EventSearchPage();
+    // })).then((value) {
+    //   if (value != null) {
+    //     _vm.requestData();
+    //   }
+    // });
   }
 
   void createEvent() {
@@ -340,7 +349,12 @@ class _EventPageState extends State<EventPage> with AutomaticKeepAliveClientMixi
 
   _appBarWidget() {
     return AppBar(
-        title: Column(children: [Text('事件时间轴',style: TextStyle(color: Theme.of(context).textTheme.displayLarge!.color),)/*,_datePicker()*/]),
+        title: Column(children: [
+          Text(
+            '事件时间轴',
+            style: TextStyle(color: Theme.of(context).textTheme.displayLarge!.color),
+          ) /*,_datePicker()*/
+        ]),
         backgroundColor: Theme.of(context).primaryColor,
         shadowColor: Colors.transparent,
         elevation: 1);
