@@ -55,16 +55,19 @@ class EventSearchPage2 extends StatelessWidget {
                   },
                   child: Image.asset(AssetManager.png('search'), color: Colors.white, width: 20)),
             ),
-            // if (_vm.searchText.isNotEmpty)
-            Positioned(
-              right: 45,
-              child: GestureDetector(
-                  onTap: () {
-                    c.searchTextController.text = '';
-                    _onSubmitSearch();
-                  },
-                  child: Image.asset(AssetManager.png('delete'), color: Colors.white, width: 30)),
-            ),
+            Obx(() => Positioned(
+                  right: 45,
+                  child: Visibility(
+                    visible: c.showDeleteBtn.value,
+                    child: GestureDetector(
+                        onTap: () {
+                          c.searchTextController.text = '';
+                          c.onTextChange('');
+                          _onSubmitSearch();
+                        },
+                        child: Image.asset(AssetManager.png('delete'), color: Colors.white, width: 30)),
+                  ),
+                )),
           ],
         ));
   }
@@ -77,6 +80,7 @@ class EventSearchPage2 extends StatelessWidget {
         child: TextField(
             focusNode: text1FocusNode,
             readOnly: false,
+            onChanged: c.onTextChange,
             onSubmitted: (v) => _onSubmitSearch(),
             controller: c.searchTextController,
             style: const TextStyle(fontSize: 16, color: Colors.white),
