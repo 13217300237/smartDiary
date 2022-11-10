@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:oktoast/oktoast.dart';
 import 'package:smart_diary/page/event/vm/event_search_vm.dart';
 
 import '../../../comm/const.dart';
@@ -19,6 +18,11 @@ class EventSearchController extends GetxController {
   // 只有需要暴露出去的对象才加上Obs
   var loadingStatue = LoadingStatus.loadingSucButEmpty.obs;
   final groupData = <String, Map<String, List<EventEntity>>>{}.obs; // 这才是需要监听的，对外暴露的对象
+  var showDeleteBtn = false.obs;
+
+  onTextChange(String s) {
+    showDeleteBtn.value = searchTextController.text.isNotEmpty;
+  }
 
   queryData({required DateFormatFunc dateFormatFunc}) async {
     _searchResList.clear();
